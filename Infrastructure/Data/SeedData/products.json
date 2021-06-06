@@ -1,0 +1,58 @@
+[
+    {
+        "Name": "Angular Speedster Board 2000",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ullamcorper nec purus vitae tincidunt. Duis efficitur ex in est mollis congue. Sed tempor nisi diam, rhoncus consequat mauris convallis ornare. Aenean fermentum enim nec venenatis pellentesque. Mauris mattis ac massa.",
+        "Price": 200,
+        "PictureUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png",
+        "ProductTypeId": 1,
+        "ProductBrandId": 1 
+    },
+    {
+        "Name": "Core Purple Boots",
+        "Description": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+        "Price": 134,
+        "PictureUrl": "https://i0.wp.com/techwings.io/wp-content/uploads/2020/09/angular-logo.jpg?fit=1000%2C1000&ssl=1",
+        "ProductTypeId": 1,
+        "ProductBrandId": 1 
+    },
+    {
+        "Name": "Redis Red Boots",
+        "Description": "Aenean fermentum enim nec venenatis pellentesque. Mauris mattis ac massa.",
+        "Price": 155,
+        "PictureUrl": "https://www.syncfusion.com/blogs/wp-content/uploads/2020/02/Whats-new-in-Angular-9.png",
+        "ProductTypeId": 2,
+        "ProductBrandId": 2 
+    },
+    {
+        "Name": "Green Code Gloves",
+        "Description": "Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+        "Price": 600,
+        "PictureUrl": "https://trio.dev/static/d358b933553e621c0c5797f49252c8b2/7fad34d867a32f732b37534ff013e916.jpg",
+        "ProductTypeId": 3,
+        "ProductBrandId": 3
+    },
+    {
+        "Name": "Blue React Woolen Hat",
+        "Description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Price": 300,
+        "PictureUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png",
+        "ProductTypeId": 1,
+        "ProductBrandId": 3 
+    },
+    {
+        "Name": "Angular Blue Boots",
+        "Description": "Nam in ipsum leo. Praesent faucibus augue nibh, ac.",
+        "Price": 150,
+        "PictureUrl": "https://habrastorage.org/webt/pt/__/dx/pt__dxiogluvs5ehcanb4puxgoe.jpeg",
+        "ProductTypeId": 4,
+        "ProductBrandId": 3
+    },
+    {
+        "Name": "Net Core Super Board",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ac auctor lacus, non ultrices arcu. Sed tellus felis, tristique id turpis quis, finibus tincidunt orci. Mauris tempor quis sapien nec congue. ",
+        "Price": 100,
+        "PictureUrl": "https://miro.medium.com/max/800/1*oEZC4NSVToygzMWLiVyNmQ.png",
+        "ProductTypeId": 3,
+        "ProductBrandId": 5
+    }
+]
