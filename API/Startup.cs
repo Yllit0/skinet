@@ -37,6 +37,10 @@ namespace API
                     policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
                 });
             });
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
             
         }
 
@@ -55,6 +59,8 @@ namespace API
             app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
+
+            app.UseCors(options => options.AllowAnyOrigin());
 
             app.UseSwaggerDocumention();
 
