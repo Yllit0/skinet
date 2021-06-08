@@ -1,0 +1,12 @@
+.feature {
+  height: 250px;
+}
+
+img {
+  margin-top: 80px;
+  background: no-repeat center center fixed;
+  height: 780px;
+  width: 80%;
+  background-size: cover;
+}
+

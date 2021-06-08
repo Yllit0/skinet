@@ -12,12 +12,13 @@ import { ShopParams } from '../shared/_models/shopParams';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-  @ViewChild('search', { static: true }) searchTerm: ElementRef | any;
+  @ViewChild('search', { static: false }) searchTerm: ElementRef | any;
   products: IProduct[] | any;
   brands: IBrand[] | any;
   types: IType[] | any;
   shopParams = new ShopParams();
   totalCount: number | any;
+
   sortOption = [
     { name: 'Alphabetical', value: 'name'},
     { name: 'Price: Low to High', value: 'priceAsc' },
@@ -94,5 +95,4 @@ export class ShopComponent implements OnInit {
     this.shopParams = new ShopParams();
     this.getProducts();
   }
-
 }
