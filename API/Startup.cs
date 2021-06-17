@@ -1,5 +1,6 @@
 using API.Helpers;
 using Infrastructure.Data;
+using Infrastructure.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -26,8 +27,25 @@ namespace API
         {
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
+    
+            services.AddMvc();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString
             ("DefaultConnection")));
+
+            services.AddDbContext<AppIdentityDbContext>(x => {
+                x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
+            });
+
+             services.AddCors(opt => 
+            {
+                opt.AddPolicy("CorsPolicy", policy => 
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost.4200");
+                });
+            });
+
+            services.AddCors(options => options.AddDefaultPolicy(
+                builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod()));
 
             services.AddSingleton<IConnectionMultiplexer>(c => {
                 var configuration = ConfigurationOptions.Parse(_config
@@ -37,18 +55,13 @@ namespace API
             });
             
             services.AddApplicationServices();
+            services.AddIdentityServices(_config);
             services.AddSwaggerDocumentation();
-            services.AddCors(opt => 
-            {
-                opt.AddPolicy("CorsPolicy", policy => 
-                {
-                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
-                });
-            });
-            services.AddCors(c =>
-            {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
-            });
+           
+            // services.AddCors(c =>
+            // {
+            //     c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            // });
             
         }
 
@@ -62,13 +75,13 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors();
             app.UseStaticFiles();
 
-            app.UseCors("CorsPolicy");
-
+            app.UseAuthentication();
             app.UseAuthorization();
-
-            app.UseCors(options => options.AllowAnyOrigin());
+            
+            app.UseHttpsRedirection(); 
 
             app.UseSwaggerDocumention();
 
@@ -76,6 +89,7 @@ namespace API
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
